@@ -11,6 +11,7 @@ const IndexPage = ({
     allMarkdownRemark: { edges },
   },
 }) => {
+
   const Posts = edges
     .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
     .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
@@ -18,31 +19,35 @@ const IndexPage = ({
   return (
     <Layout>
       <Seo title="Home" />
-      <h1 className="text-3xl">Hi people</h1>
 
+        <div className="bg-white">
+          <div className="px-4 py-16 mx-auto max-w-7xl sm:py-24 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <h1 className="mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-7xl">
+                OTBChess Blog
+              </h1>
+              <p className="mt-6 text-xl leading-8 text-gray-500">
+                For the love of Chess, over the board, of course.
+              </p>
+            </div>
+          </div>
+          <div className="relative">
+            <div className="absolute inset-0 flex items-center" aria-hidden="true">
+              <div className="w-full border-t border-gray-300" />
+            </div>
+          </div>
+        </div>
 
       <div>{Posts}</div>
 
-      <StaticImage
+      {/* <StaticImage
         src="../images/gatsby-astronaut.png"
         width={300}
         quality={95}
         formats={["AUTO", "WEBP", "AVIF"]}
         alt="A Gatsby astronaut"
         style={{ marginBottom: `1.45rem` }}
-      />
-
-      <p>
-        <Link className="block" to="/page-2/">
-          Go to page 2
-        </Link>
-        <Link className="block" to="/using-typescript/">
-          Go to "Using TypeScript"
-        </Link>
-        <Link className="block" to="/test/">
-          Go to Test Page
-        </Link>
-      </p>
+      /> */}
 
     </Layout>
   )

@@ -1,25 +1,6 @@
 import * as React from "react"
-import PropTypes from "prop-types"
-import { Link } from "gatsby"
 
-interface Props {
-  siteTitle: string
+export default function Header() {
+  return (
+  )
 }
-
-const Header = ({ siteTitle }: Props) => (
-  <header>
-    <div>
-      <h1>
-        <Link to="/">
-          { siteTitle }
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Header

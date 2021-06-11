@@ -9,8 +9,6 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
-
 interface Props {
   children?: any
 }
@@ -27,32 +25,13 @@ const Layout = ({ children }: Props) => {
   `)
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
+    <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+      {/* We've used 3xl here, but feel free to try other max-widths based on your needs */}
+      <div className="max-w-3xl mx-auto">
         <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
       </div>
-    </>
+    </div>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout
