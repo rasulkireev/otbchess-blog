@@ -50,5 +50,11 @@ module.exports = {
       resolve: `gatsby-plugin-typescript`,
       options: {},
     },
+    {
+      resolve: `gatsby-plugin-plausible`,
+      options: {
+        domain: `blog.otbchess.org`,
+      },
+    },
   ],
 }
