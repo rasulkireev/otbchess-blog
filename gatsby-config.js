@@ -56,5 +56,6 @@ module.exports = {
         domain: `blog.otbchess.org`,
       },
     },
+    `gatsby-plugin-mdx`,
   ],
 }
